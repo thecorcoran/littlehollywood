@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LITTLE HOLLYWOOD — Olympia, WA, 1931</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="screen" role="application" aria-label="Little Hollywood Text Adventure">
+    <header id="hud" aria-live="polite">
+      <div id="hud-left">
+        <span id="hud-room">UNCLE GUS'S FLOAT HOUSE</span>
+        <span id="hud-clock">DAY 1 &middot; 9:00 AM</span>
+      </div>
+      <div id="hud-right">
+        <div id="tide-gauge" title="Deschutes Tide Flats Water Level">
+          <span id="tide-label">TIDE</span>
+          <span id="tide-bar" aria-label="Tide water level">[............]</span>
+          <span id="tide-dir" title="Tide direction">&uarr;</span>
+          <span id="tide-state">GROUNDED</span>
+        </div>
+        <div id="compass-hud" class="hidden" title="Brass Pocket Compass">
+          <span id="compass-label">CMP</span>
+          <span id="compass-dirs">N S E W</span>
+        </div>
+      </div>
+    </header>
+
+    <main id="output" tabindex="0" aria-live="polite" aria-relevant="additions"></main>
+
+    <form id="prompt-bar" autocomplete="off">
+      <label for="cmd" id="prompt-glyph" aria-hidden="true">&gt;</label>
+      <input
+        id="cmd"
+        type="text"
+        spellcheck="false"
+        autocapitalize="off"
+        autocomplete="off"
+        autocorrect="off"
+        placeholder="Type a command (help, look, log)..."
+        autofocus
+      >
+    </form>
+  </div>
+
+  <script src="world.js"></script>
+  <script src="items.js"></script>
+  <script src="story.js"></script>
+  <script src="parser.js"></script>
+  <script src="engine.js"></script>
+</body>
+</html>
